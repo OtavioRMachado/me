@@ -3,40 +3,42 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <script>
-      var i = 0;
+      var position = 0;
       var texts = ['OTAVIO', 'SOFTWARE ENGINEER', 'WANNABE WRITER', 'WORLD TRAVELER', 'LGBTQIA+', 'BRAZILIAN', 'SLYTHERIN', 'GEEK'];
       var icons = ["👋", "💻", "✍", "🌍", "🏳️‍🌈", "🇧🇷", "🐍", "🤓", ];
-      var text = 0;
+      var textNumber = 0;
       var speed = 150;
       var changeSpeed = 500;
-      var x = 0;
-      var y = 0;
+      var mouseX = 0;
+      var mouseY = 0;
       window.onload = function () { setTimeout(typeWriter, speed) };
-
+      function toggleSidebar() {
+        document.getElementById("sidebar-menu").classList.toggle('sidebar-menu-open');
+        document.getElementById("sidebar-content").classList.toggle('sidebar-content-show');
+      }
       function showCoords(event) {
-        x = event.clientX*110/window.innerWidth;
-        y = event.clientY*70/innerHeight;
-        console.log(x, y);
-        document.getElementById("right-eye-2").setAttribute("transform", "scale(3) translate(" + (x-370) + "," + (y-320) + ")");
-        document.getElementById("right-eye-2").setAttribute("style", "");
-        document.getElementById("left-eye-2").setAttribute("transform", "scale(3) translate(" + (x-370) + "," + (y-320) + ")");
-        document.getElementById("left-eye-2").setAttribute("style", "");
+        mouseX = event.clientX*110/window.innerWidth;
+        mouseY = event.clientY*70/innerHeight;
+        document.getElementById("right-eye-ball").setAttribute("transform", "scale(3) translate(" + (mouseX-370) + "," + (mouseY-320) + ")");
+        document.getElementById("right-eye-ball").setAttribute("style", "");
+        document.getElementById("left-eye-ball").setAttribute("transform", "scale(3) translate(" + (mouseX-370) + "," + (mouseY-320) + ")");
+        document.getElementById("left-eye-ball").setAttribute("style", "");
       }
       function typeWriter() {
-        if (i < texts[text].length) {
-          document.getElementById("introduction").innerHTML += texts[text].charAt(i);
-          i++;
+        if (position < texts[textNumber].length) {
+          document.getElementById("introduction").innerHTML += texts[textNumber].charAt(position);
+          position++;
           setTimeout(typeWriter, speed);
-        } else if (i === texts[text].length) {
-          document.getElementById("introduction-icon").innerHTML = " " + icons[text];
-          i++;
+        } else if (position === texts[textNumber].length) {
+          document.getElementById("introduction-icon").innerHTML = " " + icons[textNumber];
+          position++;
           setTimeout(typeWriter, changeSpeed);
         } else {
-          var lastText = text;
-          while (text === lastText) {
-            text = Math.floor(Math.random() * (texts.length));
+          var lastShownText = textNumber;
+          while (textNumber === lastShownText) {
+            textNumber = Math.floor(Math.random() * (texts.length));
           }
-          i = 0;
+          position = 0;
           document.getElementById("introduction").innerHTML = "";
           document.getElementById("introduction-icon").innerHTML = "";
           setTimeout(typeWriter, speed);
@@ -62,13 +64,13 @@
       <svg class="left-eye" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1000 1000" width="100px" height="90px">
         <g fill="rgb(0, 0, 0, 0.2)">
           <path stroke-width="40px" stroke="rgb(0, 0, 0, 0.2)" fill="white" d="M493.6,794C196.9,794,10,576.3,10,518.6C10,460.8,196.9,206,493.6,206C790.2,206,990,444,990,518.6C990,593.1,790.2,794,493.6,794z" />
-          <path style="transform: scale(3) translate(-300px, -300px)" id="left-eye-2" fill="rgb(0, 0, 0, 0.2)" d="M480.2,368.2c-43.3,0-78.4,36.3-78.4,81c0,44.7,35.1,81,78.4,81c43.3,0,78.4-36.3,78.4-81C558.6,404.4,523.5,368.2,480.2,368.2z M715.6,327.7c28.6,39.3,48,79.2,48" />
+          <path style="transform: scale(3) translate(-300px, -300px)" id="left-eye-ball" fill="rgb(0, 0, 0, 0.2)" d="M480.2,368.2c-43.3,0-78.4,36.3-78.4,81c0,44.7,35.1,81,78.4,81c43.3,0,78.4-36.3,78.4-81C558.6,404.4,523.5,368.2,480.2,368.2z M715.6,327.7c28.6,39.3,48,79.2" />
         </g>
       </svg>
       <svg class="right-eye" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1000 1000" width="100px" height="90px">
         <g>
           <path stroke-width="40px" stroke="rgb(0, 0, 0, 0.2)" fill="white" d="M493.6,794C196.9,794,10,576.3,10,518.6C10,460.8,196.9,206,493.6,206C790.2,206,990,444,990,518.6C990,593.1,790.2,794,493.6,794z" />
-          <path style="transform: scale(3) translate(-300px, -300px)" id="right-eye-2" fill="rgb(0, 0, 0, 0.2)" d="M480.2,368.2c-43.3,0-78.4,36.3-78.4,81c0,44.7,35.1,81,78.4,81c43.3,0,78.4-36.3,78.4-81C558.6,404.4,523.5,368.2,480.2,368.2z M715.6,327.7c28.6,39.3,48,79.2,48" />
+          <path style="transform: scale(3) translate(-300px, -300px)" id="right-eye-ball" fill="rgb(0, 0, 0, 0.2)" d="M480.2,368.2c-43.3,0-78.4,36.3-78.4,81c0,44.7,35.1,81,78.4,81c43.3,0,78.4-36.3,78.4-81C558.6,404.4,523.5,368.2,480.2,368.2z M715.6,327.7c28.6,39.3,48,79.2" />
         </g>
       </svg>
     </div>
@@ -76,11 +78,40 @@
       <span id="introduction"></span>
       <span id="introduction-icon"></span>
     </div>
-      <!-- <h1 class="name">
-        <span>T</span>
-        <span>A</span>
-        <span>V</span>
-        <span>I</span>
-      </h1> -->
+    <div id="sidebar-button" onclick="toggleSidebar()">
+      <svg height="32px" id="Layer_1" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <path fill="#AAA" d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+      </svg>
+    </div>
+    <div id="sidebar">
+      <div id="sidebar-border">
+        <div id="sidebar-menu">
+          <div id="sidebar-content">
+            <!-- Content will be here -->
+            <a class="menu-button" href="index.html">HOME</a>
+            <a class="menu-button" href="#">THE ENGINEER</a>
+            <a class="menu-button" href="#">THE TRAVELER</a>
+            <a class="menu-button" href="#">THE WRITER</a>
+            <a class="menu-button" href="mailto:otaviormachado@gmail.com">CONTACT</a>
+            <div id="sidebar-close" onclick="toggleSidebar()">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+                <defs>
+                  <linearGradient id="rainbow-menu" x1="0" x2="0" y1="0" y2="100%" gradientUnits="userSpaceOnUse" >
+                    <stop stop-color="red" offset="15%"/>
+                    <stop stop-color="orange" offset="30%"/>
+                    <stop stop-color="yellow" offset="45%"/>
+                    <stop stop-color="green" offset="60%"/>
+                    <stop stop-color="cyan" offset="75%"/>
+                    <stop stop-color="blue" offset="90%"/>
+                    <stop stop-color="violet" offset="100%"/> 
+                  </linearGradient>
+                </defs>
+                <g><path fill="url(#rainbow-menu)" d="M500,10C229.4,10,10,229.4,10,500c0,270.6,219.4,490,490,490c270.6,0,490-219.4,490-490C990,229.4,770.6,10,500,10z M722.7,661.6l-61.1,61.1L500,561.1L338.3,722.8l-61.1-61.1L438.9,500L277.3,338.3l61.1-61.1L500,438.9l161.7-161.7l61.1,61.1L561.1,500L722.7,661.6z"/></g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

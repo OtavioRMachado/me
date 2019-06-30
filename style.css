@@ -68,3 +68,78 @@
     line-height: 50px;
     padding-left: 20px;
   }
+
+  #sidebar {
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+  }
+
+  #sidebar-border {
+    position: relative;
+    padding-right: 10px;
+    background-color: black;
+    height: 100%;
+    background: linear-gradient(to bottom, violet, indigo, blue, green, yellow, orange, red);
+    transition: left 2s ease;
+    -webkit-box-shadow: 6px -6px 35px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px -6px 35px -6px rgba(0,0,0,0.75);
+    box-shadow: 6px -6px 35px -6px rgba(0,0,0,0.75);
+
+  }
+
+  #sidebar-content {
+    display: none;
+    transition: opacity 2s ease-in;
+    height: 100%;
+  }
+
+  #sidebar-content.sidebar-content-show {
+    display: flex;
+    flex-direction: column;
+    transition: opacity 2s ease-in;
+  }
+
+  #sidebar-menu.sidebar-menu-open {
+    width: 300px;
+    opacity: 1;
+  }
+
+  #sidebar-menu {
+    background-color: white;
+    height: 100%;
+    width: 0px;
+    opacity: 0;
+    transition: width 0.5s ease, opacity 1.5s ease-in;
+  }
+
+  #sidebar-button {
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    cursor: pointer;
+  }
+
+  .menu-button {
+    width: 100%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 32px;
+    text-decoration: none;
+    color: black;
+    font-family: monospace;
+    font-weight: 400;
+  }
+
+  .menu-button:hover {
+    font-weight: 700;
+  }
+
+  #sidebar-close {
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
+    width: 90%;
+    text-align: center;
+  }
