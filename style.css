@@ -119,6 +119,9 @@
     top: 10px;
     left: 25px;
     cursor: pointer;
+    width: 32px;
+    height: 32px;
+    margin: auto;
   }
 
   .menu-button {
@@ -140,7 +143,64 @@
     position: absolute;
     bottom: 10px;
     left: 0px;
-    width: 90%;
+    width: 100%;
+    height: 50px;
     text-align: center;
     cursor: pointer;
+  }
+
+  @media only screen and (max-width: 768px) {
+    #sidebar-menu.sidebar-menu-open {
+      width: 758px;
+      max-width: 100%;
+      height: 100%;
+      opacity: 1;
+    }
+
+    #sidebar-close {
+      height: 200px;
+    }
+
+    #sidebar-close-svg {
+      width: 100%;
+      height: 200px;
+    }
+
+    #sidebar-button-svg {
+      width: 100px;
+      height: 100px;
+    }
+
+    .menu-button {
+      font-size: 3em;
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    #sidebar-menu.sidebar-menu-open {
+      width: 490px;
+      max-width: 100%;
+      height: 100%;
+      opacity: 1;
+    }
+
+    #sidebar-close {
+      height: 200px;
+    }
+
+    #sidebar-close-svg {
+      width: 100%;
+      height: 200px;
+    }
+
+    #sidebar-button-svg {
+      width: 100px;
+      height: 100px;
+    }
+
+    .menu-button {
+      font-size: 3em;
+      width: 100%;
+    }
   }
