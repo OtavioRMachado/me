@@ -124,8 +124,8 @@
   .menu-button {
     width: 100%;
     text-align: center;
-    line-height: 60px;
-    font-size: 32px;
+    line-height: 2.5em;
+    font-size: 2.5em;
     text-decoration: none;
     color: black;
     font-family: monospace;
@@ -142,4 +142,5 @@
     left: 0px;
     width: 90%;
     text-align: center;
+    cursor: pointer;
   }
