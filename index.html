@@ -9,8 +9,19 @@
       var text = 0;
       var speed = 150;
       var changeSpeed = 500;
+      var x = 0;
+      var y = 0;
       window.onload = function () { setTimeout(typeWriter, speed) };
 
+      function showCoords(event) {
+        x = event.clientX*110/window.innerWidth;
+        y = event.clientY*70/innerHeight;
+        console.log(x, y);
+        document.getElementById("right-eye-2").setAttribute("transform", "scale(3) translate(" + (x-370) + "," + (y-320) + ")");
+        document.getElementById("right-eye-2").setAttribute("style", "");
+        document.getElementById("left-eye-2").setAttribute("transform", "scale(3) translate(" + (x-370) + "," + (y-320) + ")");
+        document.getElementById("left-eye-2").setAttribute("style", "");
+      }
       function typeWriter() {
         if (i < texts[text].length) {
           document.getElementById("introduction").innerHTML += texts[text].charAt(i);
@@ -32,7 +43,7 @@
         }
       }
   </script>
-  <body style="background-color: white; display: flex; flex-direction: column">
+  <body style="background-color: white; display: flex; flex-direction: column" onmousemove="showCoords(event)">
     <div class="icon">
       <svg class="glasses" height="161px" id="Layer_1" version="1.1" viewBox="182 160 150 202" width="355px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
@@ -48,11 +59,17 @@
         </defs>
         <path fill="url(#rainbow)" d="M465.4,247c-2.2-22-12.4-43-28.9-58.4c-17.1-15.9-39.3-24.7-62.7-24.7c-41.5,0-77.3,27.4-88.5,67c-7-7-18.5-11.7-29.3-11.7  c-10.8,0-22.3,4.7-29.3,11.7c-11.2-39.6-47-67-88.5-67c-23.3,0-45.6,8.7-62.7,24.6C59,204,48.8,225,46.6,247H32v18h14.6  c2.2,22,12.4,43,28.9,58.4c17.1,15.9,39.3,24.7,62.7,24.7c50.8,0,92.1-41.2,92.1-92c0-0.1,0-0.1,0-0.1h0c0-9.9,11.5-21.6,25.7-21.6  s25.7,11.7,25.7,21.6h0c0,0,0,0,0,0.1c0,50.8,41.3,92,92.1,92c23.3,0,45.6-8.7,62.7-24.7c16.5-15.4,26.7-36.5,28.9-58.5H480v-18  H465.4z M373.8,333c-42.5,0-77-34.6-77-77c0-42.5,34.6-77,77-77c42.5,0,77,34.6,77,77C450.8,298.5,416.3,333,373.8,333z M138.2,333  c-42.5,0-77-34.6-77-77c0-42.5,34.6-77,77-77c42.5,0,77,34.6,77,77C215.2,298.5,180.7,333,138.2,333z"/>
       </svg>
-      <svg fill="rgb(0, 0, 0, 0.2)" class="left-eye" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1000 1000" width="100px" height="90px">
-        <g><path d="M493.6,794C196.9,794,10,576.3,10,518.6C10,460.8,196.9,206,493.6,206C790.2,206,990,444,990,518.6C990,593.1,790.2,794,493.6,794z M480.2,368.2c-43.3,0-78.4,36.3-78.4,81c0,44.7,35.1,81,78.4,81c43.3,0,78.4-36.3,78.4-81C558.6,404.4,523.5,368.2,480.2,368.2z M715.6,327.7c28.6,39.3,48,79.2,48,132.1c0,129.9-102.1,235.2-228.1,235.2c-125.9,0-228-105.3-228-235.2c0-80.3,15.4-130.2,74.9-172.7C194.4,316,76,472.2,76,514.9c0,46.8,155.7,217.2,414.2,217.2c258.5,0,427.8-156.8,427.8-217.2C918,475.6,873.8,393.3,715.6,327.7z"/></g>
+      <svg class="left-eye" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1000 1000" width="100px" height="90px">
+        <g fill="rgb(0, 0, 0, 0.2)">
+          <path stroke-width="40px" stroke="rgb(0, 0, 0, 0.2)" fill="white" d="M493.6,794C196.9,794,10,576.3,10,518.6C10,460.8,196.9,206,493.6,206C790.2,206,990,444,990,518.6C990,593.1,790.2,794,493.6,794z" />
+          <path style="transform: scale(3) translate(-300px, -300px)" id="left-eye-2" fill="rgb(0, 0, 0, 0.2)" d="M480.2,368.2c-43.3,0-78.4,36.3-78.4,81c0,44.7,35.1,81,78.4,81c43.3,0,78.4-36.3,78.4-81C558.6,404.4,523.5,368.2,480.2,368.2z M715.6,327.7c28.6,39.3,48,79.2,48" />
+        </g>
       </svg>
-      <svg fill="rgb(0, 0, 0, 0.2)" class="right-eye" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1000 1000" width="100px" height="90px">
-        <g><path d="M493.6,794C196.9,794,10,576.3,10,518.6C10,460.8,196.9,206,493.6,206C790.2,206,990,444,990,518.6C990,593.1,790.2,794,493.6,794z M480.2,368.2c-43.3,0-78.4,36.3-78.4,81c0,44.7,35.1,81,78.4,81c43.3,0,78.4-36.3,78.4-81C558.6,404.4,523.5,368.2,480.2,368.2z M715.6,327.7c28.6,39.3,48,79.2,48,132.1c0,129.9-102.1,235.2-228.1,235.2c-125.9,0-228-105.3-228-235.2c0-80.3,15.4-130.2,74.9-172.7C194.4,316,76,472.2,76,514.9c0,46.8,155.7,217.2,414.2,217.2c258.5,0,427.8-156.8,427.8-217.2C918,475.6,873.8,393.3,715.6,327.7z"/></g>
+      <svg class="right-eye" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1000 1000" width="100px" height="90px">
+        <g>
+          <path stroke-width="40px" stroke="rgb(0, 0, 0, 0.2)" fill="white" d="M493.6,794C196.9,794,10,576.3,10,518.6C10,460.8,196.9,206,493.6,206C790.2,206,990,444,990,518.6C990,593.1,790.2,794,493.6,794z" />
+          <path style="transform: scale(3) translate(-300px, -300px)" id="right-eye-2" fill="rgb(0, 0, 0, 0.2)" d="M480.2,368.2c-43.3,0-78.4,36.3-78.4,81c0,44.7,35.1,81,78.4,81c43.3,0,78.4-36.3,78.4-81C558.6,404.4,523.5,368.2,480.2,368.2z M715.6,327.7c28.6,39.3,48,79.2,48" />
+        </g>
       </svg>
     </div>
     <div style="display: flex; justify-content: center; height: 50px; margin: 0 0 auto 0 ;">
