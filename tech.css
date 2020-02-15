@@ -1,0 +1,37 @@
+.icon {
+    background-color: #38006b;;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: 1px solid #cd9fff;
+}
+
+.glasses {
+    margin: auto;
+}
+
+body {
+    background-color: #38006b;
+}
+
+.header {
+    margin: auto;
+    display: flex;
+    border-top-left-radius: 27px;
+    border: 1px solid #cd9fff;
+    width: fit-content;
+    background-color: #cd9fff;
+    border-bottom-left-radius: 27px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-right: 5px;
+}
+
+.header span {
+    margin: auto 0;
+    font-size: 20px;
+    font-family: sans-serif;
+    color: #38006b;
+    margin-left: 4px;
+}
