@@ -12,11 +12,12 @@
 }
 
 body {
+    margin: 0;
     background-color: #38006b;
 }
 
 .header {
-    margin: auto;
+    margin: 10px;
     display: flex;
     border-top-left-radius: 27px;
     border: 1px solid #cd9fff;
@@ -34,4 +35,137 @@ body {
     font-family: sans-serif;
     color: #38006b;
     margin-left: 4px;
+    font-weight: bold;
+}
+
+.content {
+    background-color: #FEFEFE;
+    margin-top: 10px;
+    padding: 10px;
+    border-top: 2px solid #cd9fff;
+}
+
+.post-header {
+    font-size: 32px;
+    font-family: sans-serif;
+    color: #38006b;
+    margin-left: 50px;
+    padding: 20px 0px;
+    font-weight: bold;
+}
+
+.post-body {
+    font-family: sans-serif;
+    margin: 0px 50px;
+    text-align: justify;
+    font-size: 18px;
+}
+
+.divider {
+    height: 2px;
+    margin-top: 25px;
+    background-color: #cd9fff;
+    margin: 25px 50px 0px 50px;
+    opacity: 0.3;
+}
+
+.heart {
+    font-weight: bolder;
+    color: red;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    border-top: 2px solid #cd9fff;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-content {
+    color: #cd9fff;
+    font-size: bold;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.flag {
+  width: 32px;
+  height: 18px;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  margin-left: 10px;
+}
+
+ .flag div {
+    width: 0;
+}
+
+.red {
+background: #f25774;
+animation-name: slide;
+animation-duration: 2.5s;
+animation-iteration-count: infinite;
+animation-delay: 0s;
+}
+
+.orange {
+background: #ffb65b;
+animation-name: slide;
+animation-duration: 2.5s;
+animation-iteration-count: infinite;
+animation-delay: 0.1s;
+}
+
+.yellow {
+background: #fdda74;
+animation-name: slide;
+animation-duration: 2.5s;
+animation-iteration-count: infinite;
+animation-delay: 0.2s;
+}
+
+.green {
+background: #4cbe5d;
+animation-name: slide;
+animation-duration: 2.5s;
+animation-iteration-count: infinite;
+animation-delay: 0.3s;
+}
+
+.blue {
+background: #4080ff;
+animation-name: slide;
+animation-duration: 2.5s;
+animation-iteration-count: infinite;
+animation-delay: 0.4s;
+}
+
+.purple {
+background: #7b64c0;
+animation-name: slide;
+animation-duration: 2.5s;
+animation-iteration-count: infinite;
+animation-delay: 0.5s;
+}
+
+@keyframes slide {
+  10% {
+    width: 0;
+    justify-self: start;
+  }
+  37% {
+    width: 100%;
+    justify-self: start;
+  }
+  63% {
+    width: 100%;
+    justify-self: end;
+  }
+  90% {
+    width: 0;
+    justify-self: end;
+  }
 }
